@@ -1,0 +1,11 @@
+C:\Users\Иван\Documents\Visual Studio 2015\Projects\MNI\MNI\bin\Debug\MNI.exe.config
+C:\Users\Иван\Documents\Visual Studio 2015\Projects\MNI\MNI\bin\Debug\MNI.exe
+C:\Users\Иван\Documents\Visual Studio 2015\Projects\MNI\MNI\bin\Debug\MNI.pdb
+C:\Users\Иван\Documents\Visual Studio 2015\Projects\MNI\MNI\obj\Debug\MNI.CustomForm.resources
+C:\Users\Иван\Documents\Visual Studio 2015\Projects\MNI\MNI\obj\Debug\MNI.Properties.Resources.resources
+C:\Users\Иван\Documents\Visual Studio 2015\Projects\MNI\MNI\obj\Debug\MNI.csproj.GenerateResource.Cache
+C:\Users\Иван\Documents\Visual Studio 2015\Projects\MNI\MNI\obj\Debug\MNI.exe
+C:\Users\Иван\Documents\Visual Studio 2015\Projects\MNI\MNI\obj\Debug\MNI.pdb
+C:\Users\Иван\Documents\Visual Studio 2015\Projects\MNI\MNI\obj\Debug\MNI.csprojResolveAssemblyReference.cache
+C:\Users\Иван\Documents\Visual Studio 2015\Projects\MNI\MNI\obj\Debug\MNI.Controls.InitExperimentControl.resources
+C:\Users\Иван\Documents\Visual Studio 2015\Projects\MNI\MNI\obj\Debug\MNI.Controls.FactorControl.resources
