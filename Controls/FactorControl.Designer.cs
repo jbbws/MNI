@@ -87,6 +87,7 @@
             this.intTbx.Name = "intTbx";
             this.intTbx.Size = new System.Drawing.Size(67, 20);
             this.intTbx.TabIndex = 13;
+            this.intTbx.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label13
             // 
@@ -103,6 +104,7 @@
             this.topTbx.Name = "topTbx";
             this.topTbx.Size = new System.Drawing.Size(67, 20);
             this.topTbx.TabIndex = 6;
+            this.topTbx.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // initTbx
             // 
@@ -110,6 +112,7 @@
             this.initTbx.Name = "initTbx";
             this.initTbx.Size = new System.Drawing.Size(67, 20);
             this.initTbx.TabIndex = 11;
+            this.initTbx.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label12
             // 
@@ -126,6 +129,7 @@
             this.botTbx.Name = "botTbx";
             this.botTbx.Size = new System.Drawing.Size(67, 20);
             this.botTbx.TabIndex = 5;
+            this.botTbx.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
             // 

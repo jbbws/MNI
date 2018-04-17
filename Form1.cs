@@ -35,9 +35,7 @@ namespace MNI
             FactorPanel.Visible = false;
           //  AddFactorControl(exp.FactorCount); 
           //  dgExp.DataSource = exp.dgList;
-            seriesGrid.AutoSize = true;
-            //apr = new Aproximation(FACTORCOUNT);
-            stat = new StaticAnalyse();
+            seriesGrid.AutoSize = true;            
         }
         public void AddFactorControl(int count)
         {
@@ -84,14 +82,7 @@ namespace MNI
             {
                 res += answ[i] >= 0 ?"+ " +answ[i].ToString("F1")+"x("+i+") ":" - "+ answ[i].ToString("F1") + "x(" + i + ") ";
             }
-            funcTextLabel.Text = res;
-        }
-        private void RunAnalyse()
-        {
-       //     double[][] src = apr.getDataFromdg((BindingList<ExpResult>)dgExp.DataSource);
-      //      double[] mathR = apr.evalApproximation(src);
-     //       double fisher = stat.Fisher(src[src.Length-1], mathR, src[src.Length-1].Length,2);
-      //      fisherLab.Text ="Критерий Фишера:" + fisher.ToString();
+            funcLbl.Text = res;
         }
         private void btnStartMNK_Click(object sender, EventArgs e)
         {
@@ -100,11 +91,18 @@ namespace MNI
             apr.DirectGaussMethod();
             apr.BackGaussMethod();
             ShowApproximFunc(apr.Answers);
-            RunAnalyse();
-
-            MessageBox.Show("test");
+            stat = new StaticAnalyse(apr.GetDataFromView(((DataTable)source.DataSource)),apr);
+            fisherTbx.Text = stat.FisherKoef.ToString();
+            determTbx.Text = stat.GetDeterminationKoef().ToString();
         }
-
+        public void DisableGrid()
+        {
+            computeGbx.Enabled = false;
+        }
+        public void EnableGrid()
+        {
+            computeGbx.Enabled = true;
+        }
         private DataTable CreateGridView()
         {
             DataTable table = new DataTable();           
@@ -144,12 +142,29 @@ namespace MNI
                 source.DataSource = table;
                 seriesGrid.DataSource = source;
                 apr = new Aproximation(exp.FactorCount, exp.SeriesSource.Count);
+                EnableGrid();
 
             }
             else
             {
                 MessageBox.Show("NOT SUBMITED FACTOR FORM");
             }
+        }
+        public void Dispose()
+        {
+            stat = null;
+            apr = null;
+            seriesGrid.DataSource = null;
+            seriesGrid.Rows.Clear();
+            seriesGrid.Columns.Clear();
+            fisherTbx.Text = String.Empty;
+            determTbx.Text = string.Empty;
+            funcLbl.Text = String.Empty;
+            DisableGrid();
+        }
+        private void clearMNKBtn_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

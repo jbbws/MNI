@@ -60,6 +60,7 @@ namespace MNI.Controls
             setOptimRbtn.Checked = false;
             expTypeCbx.SelectedItem = 0;
             Root.RemoveFactorControl();
+            Root.Dispose();
         }
         public InitExperimentControl()
         {

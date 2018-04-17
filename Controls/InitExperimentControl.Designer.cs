@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.clearExpBtn = new System.Windows.Forms.Button();
+            this.expTypeCbx = new System.Windows.Forms.ComboBox();
             this.acceptExpBtn = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.factsCountTbx = new System.Windows.Forms.TextBox();
             this.setModelRbtn = new System.Windows.Forms.RadioButton();
             this.setOptimRbtn = new System.Windows.Forms.RadioButton();
-            this.expTypeCbx = new System.Windows.Forms.ComboBox();
-            this.clearExpBtn = new System.Windows.Forms.Button();
             this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,6 +56,27 @@
             this.groupBox5.TabIndex = 8;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Настройка эксперимента";
+            // 
+            // clearExpBtn
+            // 
+            this.clearExpBtn.Location = new System.Drawing.Point(406, 52);
+            this.clearExpBtn.Name = "clearExpBtn";
+            this.clearExpBtn.Size = new System.Drawing.Size(66, 23);
+            this.clearExpBtn.TabIndex = 11;
+            this.clearExpBtn.Text = "Сброс";
+            this.clearExpBtn.UseVisualStyleBackColor = true;
+            this.clearExpBtn.Click += new System.EventHandler(this.clearExpBtn_Click);
+            // 
+            // expTypeCbx
+            // 
+            this.expTypeCbx.FormattingEnabled = true;
+            this.expTypeCbx.Items.AddRange(new object[] {
+            "Максимум",
+            "Минимум"});
+            this.expTypeCbx.Location = new System.Drawing.Point(279, 52);
+            this.expTypeCbx.Name = "expTypeCbx";
+            this.expTypeCbx.Size = new System.Drawing.Size(121, 21);
+            this.expTypeCbx.TabIndex = 10;
             // 
             // acceptExpBtn
             // 
@@ -91,6 +112,7 @@
             this.factsCountTbx.Name = "factsCountTbx";
             this.factsCountTbx.Size = new System.Drawing.Size(121, 20);
             this.factsCountTbx.TabIndex = 6;
+            this.factsCountTbx.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // setModelRbtn
             // 
@@ -113,27 +135,6 @@
             this.setOptimRbtn.TabIndex = 1;
             this.setOptimRbtn.Text = "Поиск оптимума";
             this.setOptimRbtn.UseVisualStyleBackColor = true;
-            // 
-            // expTypeCbx
-            // 
-            this.expTypeCbx.FormattingEnabled = true;
-            this.expTypeCbx.Items.AddRange(new object[] {
-            "Максимум",
-            "Минимум"});
-            this.expTypeCbx.Location = new System.Drawing.Point(279, 52);
-            this.expTypeCbx.Name = "expTypeCbx";
-            this.expTypeCbx.Size = new System.Drawing.Size(121, 21);
-            this.expTypeCbx.TabIndex = 10;
-            // 
-            // clearExpBtn
-            // 
-            this.clearExpBtn.Location = new System.Drawing.Point(406, 52);
-            this.clearExpBtn.Name = "clearExpBtn";
-            this.clearExpBtn.Size = new System.Drawing.Size(66, 23);
-            this.clearExpBtn.TabIndex = 11;
-            this.clearExpBtn.Text = "Сброс";
-            this.clearExpBtn.UseVisualStyleBackColor = true;
-            this.clearExpBtn.Click += new System.EventHandler(this.clearExpBtn_Click);
             // 
             // InitExperimentControl
             // 

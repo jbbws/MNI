@@ -12,16 +12,12 @@ namespace MNI
     {
         public double[] Answers { get; set; }
         public double[][] Gauss { get; set; }
-        int countParam;
-        int levelAprox;
-        int Arguments { get; set; }
-        int Factors { get; set; }
+        public int Arguments { get; set; }
+        public int Factors { get; set; }
         public Aproximation(int factors, int seriescount)
         {
             Arguments = seriescount;
             Factors = factors;
-            levelAprox = factors;
-            countParam = factors + 1;
         }
         public double summul(double[] x1, double[] x2)
         {
@@ -53,20 +49,6 @@ namespace MNI
             return res;
         }
 
-
-        //public double[][] FillMatrix(double[][] source)
-        //{ 
-        //    double[][] res = new double[countParam][];
-        //    for(int i = 0; i <countParam;i++)
-        //    {
-        //        res[i] = new double[countParam + 1];
-        //        for(int j=0; j<countParam+1; j++)
-        //        {
-        //            res[i][j] = summul(source[j], source[i]);
-        //        }
-        //    }
-        //    return res;
-        //}
         public double[][] GetDataFromView(DataTable list)
         {
             Arguments = list.Rows.Count;
@@ -93,27 +75,10 @@ namespace MNI
                 }
             }
         }    
-       /* int FindLastNotNullMemer()
-        {
-            double eps = 0.0001;
-            int index = Factors - 1;
-            int result = Arguments - 1;
-            for(int i = Gauss.Length - 1; i >= 0;i --)
-            {
-                if( Math.Abs(Gauss[i][index] - 0) > eps)
-                {
-                    result = i;
-                    return result;
-                }
-            }
-            return index;
-        }*/
         public void BackGaussMethod()
         {
             Answers = new double[Factors];
-            //int item = FindLastNotNullMemer();
             double div = Gauss[Factors - 1][Factors]/ Gauss[Factors - 1][Factors - 1];
-            //double lib = Gauss[countParam-1][countParam ]/ Gauss[countParam-1][countParam-1];
             Answers[Factors - 1] = div;// double.IsNaN(div) ? 0 : div;
             for (int i = Factors - 2; i >= 0; i--)
             {
@@ -126,19 +91,21 @@ namespace MNI
                 Answers[i] = v1;//double.IsNaN(v1) ? 0 : v1; 
             }
         }
-
-        //public double[] evalApproximation(double[][] fact)
-        //{
-        //    double[] res = new double[fact.Length];
-        //    for (int k = 0; k < fact.Length; k++)
-        //    {
-        //        res[k] = 0;
-        //        for (int i = 0; i < Answ.Length - 1; i++)
-        //        {
-        //            res[k] += Answ[i] * fact[i][k];
-        //        }
-        //    }
-        //    return res;
-        //}  
+        public double TestAnsw(double[] args)
+        {
+            double res = 0;
+            for (int i = 0; i < Answers.Length; i++)
+            {
+                res += args[i] * Answers[i];
+            }
+            return res;
+        }
+        public void Dispose()
+        {
+            Answers = null;
+            Gauss = null;
+            Arguments = 0;
+            Factors = 0;
+        }  
     }
 }
